@@ -19,6 +19,6 @@ def int(x):
     I = integrate(P(x),x)
     I1 = exp(I)
     IF = sympify(I1)
-    y = integrate(IF*Q(x))/IF
+    y = (integrate(IF*Q(x))+Symbol('C'))/IF
     return(y)
 int(x)
