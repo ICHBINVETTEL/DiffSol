@@ -15,10 +15,16 @@ def Q(x):
     q1 = sympify(q)
     return(q1)
 
-def int(x):
+def f(x):
     I = integrate(P(x),x)
     I1 = exp(I)
     IF = sympify(I1)
     y = (integrate(IF*Q(x))+Symbol('C'))/IF
     return(y)
-int(x)
+f(x)
+
+def my_plot():
+    plot(f(x).subs(C,1),(x,-10,10),xlabel='x',ylabel='y',title='Soln.')
+
+my_plot()
+
